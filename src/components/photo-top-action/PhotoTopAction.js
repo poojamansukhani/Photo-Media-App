@@ -5,7 +5,7 @@ export const PhotoTopAction = (props) => {
   return (
     <>
         <div className="top-actions">
-            <LikeComment handleLiked={props.handleLiked}/>
+            <LikeComment handleLiked={props.handleLiked} handleComment={props.handleComment}/>
             <Search handleSearch={props.handleSearch}/>
         </div>
     </>

@@ -134,12 +134,27 @@ body {
 .photo-lists{display:flex;margin:0 -15px;flex-wrap: wrap;padding:0 30px}
 .photo-list{width:33.33%;padding:0 15px;margin-bottom: 20px;}
 .photo-list-inner{border:1px solid #6666b4;height:100%;}
-.photo-list-inner > img{width:100%; height: 250px;object-fit: cover;}
-.likes{padding:0 15px;display: flex;font-size: 14px;}
+.photo-list-inner > img{width:100%; height: 250px;object-fit: cover;cursor: pointer;}
+.likes{padding:5px 15px 0;display: flex;font-size: 14px;justify-content: space-between;}
 .likes li:last-child{align-items: flex-end;}
 
 .comment input{height: 25px;width: 100%;margin:0;padding:0 60px 0 15px;border:1px solid #6666b4}
 .comment{position: relative;}
-.comment button{position: absolute;right: 0;background: rgb(171, 171, 254);color: rgb(2, 2, 118);border:none;width:50px;height: 25px;top:4px}
-.prev-comments li{padding:5px 15px;background: #cdf2cd;border-bottom:1px solid #6666b4}
+.comment button{position: absolute;right: 0;background: rgb(171, 171, 254);color: rgb(2, 2, 118);border:none;width:50px;height: 25px;top:4px;border:1px solid #6666b4}
+.prev-comments li{color:#000;font-size:14px;padding:5px 15px;background: #cdf2cd;border-bottom:1px solid #6666b4}
 .prev-comments li:last-child{border-bottom: none;}
+
+/**RESPONSIVE**/
+@media (max-width:991px){
+  .photo-list{width:50%;padding:0 15px}
+  
+}
+@media (max-width:767px){
+  .photo-list-inner > img{height: 160px;}
+  .top-actions {display: block;text-align: center;padding:10px 15px}
+  .action-list{align-items: center;justify-content: center;margin-bottom: 10px;}
+  .action-list input{width:100%}
+}
+@media (max-width:400px){
+  .photo-list{width:100%}
+}

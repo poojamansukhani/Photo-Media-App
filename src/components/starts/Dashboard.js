@@ -8,6 +8,7 @@ export class Dashboard extends Component {
     this.state={
       data:[],
       tempData:[],
+      tempComment:[],
       toggle:false
     }
   }
@@ -18,7 +19,7 @@ export class Dashboard extends Component {
         return (item.category).toLowerCase() === value.toLowerCase()
       });
       this.setState({
-        tempData:filteredData
+        tempData:filteredData,
       })
     }
    
@@ -34,6 +35,20 @@ export class Dashboard extends Component {
     else{
       this.setState({
         tempData:[]
+      })
+    }
+    this.setState({toggle:!this.state.toggle})
+  }
+  handleComment = () => {
+    if(this.state.toggle === true){
+      const tempComment = _.sortBy(this.state.data, 'comments');
+      this.setState({
+        tempComment:tempComment.reverse()
+      })
+    }
+    else{
+      this.setState({
+        tempComment:[]
       })
     }
     this.setState({toggle:!this.state.toggle})
@@ -54,8 +69,8 @@ export class Dashboard extends Component {
       return(
         <React.Fragment>
             <div className="container">
-                <h6 className="text-center" style={headingStyle}>Imaginery</h6>
-                <PhotoTopAction handleSearch={this.handleSearch} handleLiked={this.handleLiked}/>
+                <h6 className="text-center" style={headingStyle}>Imaginary</h6>
+                <PhotoTopAction handleSearch={this.handleSearch} handleLiked={this.handleLiked} handleComment={this.handleComment}/>
                 {/* <PhotoGallery data={this.state.data}/> */}
                 { this.state.tempData.length > 0 ? <PhotoGallery data={this.state.tempData} /> : <PhotoGallery data={this.state.data} /> }
 

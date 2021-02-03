@@ -1,0 +1,145 @@
+html, body {
+  height: 100%;
+}
+
+*, *:before, *:after {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  -o-box-sizing: border-box;
+  -ms-box-sizing: border-box;
+}
+
+img {
+  vertical-align: middle;
+  max-width: 100%;
+}
+
+p {
+  font-size: 16px;
+  line-height: 1.94;
+  color: #747e88;
+  font-weight: 300;
+  margin: 0 0 10px 0;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-weight: normal;
+  margin: 0;
+  margin-bottom: 10px;
+}
+
+h1, .h1 {
+  font-size: 40px;
+  line-height: 60px;
+  color: #000;
+}
+
+h2, .h2 {
+  font-size: 30px;
+  line-height: 45px;
+}
+
+h3, .h3 {
+  font-size: 24px;
+  line-height: 32px;
+}
+
+h4, .h4 {
+  font-size: 22px;
+  line-height: 30px;
+}
+
+h5, .h5 {
+  font-size: 20px;
+  line-height: 1.75;
+}
+
+h6, .h6 {
+  font-size: 18px;
+}
+
+ul, ol {
+  margin: 0;
+  padding: 0;
+  line-height: normal;
+}
+
+
+.list-unstyled {
+  padding-left: 0;
+  list-style: none;
+}
+
+a {
+  color: rgb(102, 102, 180);
+  text-decoration: none;
+  cursor: pointer;
+  cursor: pointer;
+}
+
+a:hover, a:focus {
+  text-decoration: none;
+  outline: none;
+  color: rgb(102, 102, 180);
+}
+
+button {
+  cursor: pointer;
+}
+
+button:focus, *:focus {
+  outline: none;
+}
+
+html[xmlns] .clearfix {
+  display: block;
+}
+
+.clearfix:after, .row:after {
+  display: block;
+  clear: both;
+  content: "";
+}
+
+/******* ~~ Body CSS ~~ *******/
+
+body {
+  position: relative;
+  font-weight: 300;
+  margin: 0;
+  font-style: normal;
+  font-stretch: normal;
+  line-height: 1.94;
+  background: #fff;
+  color: #747e88;
+  font-family: Roboto;
+  font-weight: 400;
+  overflow: hidden;
+  overflow-y: auto;
+  width: 100%; padding: 0 15px;
+}
+.container {
+  margin: 0 auto;
+  max-width: 1170px;
+  border:1px solid #6666b4;
+}
+.text-center {
+  text-align: center;
+}
+.top-actions{display: flex;padding:10px 0;align-items: center;}
+.action-list{display: flex;margin:0 15px}
+.action-list li{padding:0 15px;position: relative;}
+.action-list li:first-child:after{content: "|";position: absolute;right: 0;}
+.photo-lists{display:flex;margin:0 -15px;flex-wrap: wrap;padding:0 30px}
+.photo-list{width:33.33%;padding:0 15px;margin-bottom: 20px;}
+.photo-list-inner{border:1px solid #6666b4;height:100%;}
+.photo-list-inner > img{width:100%; height: 250px;object-fit: cover;}
+.likes{padding:0 15px;display: flex;font-size: 14px;}
+.likes li:last-child{align-items: flex-end;}
+
+.comment input{height: 25px;width: 100%;margin:0;padding:0 60px 0 15px;border:1px solid #6666b4}
+.comment{position: relative;}
+.comment button{position: absolute;right: 0;background: rgb(171, 171, 254);color: rgb(2, 2, 118);border:none;width:50px;height: 25px;top:4px}
+.prev-comments li{padding:5px 15px;background: #cdf2cd;border-bottom:1px solid #6666b4}
+.prev-comments li:last-child{border-bottom: none;}

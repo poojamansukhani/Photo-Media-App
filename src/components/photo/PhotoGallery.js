@@ -1,6 +1,6 @@
 import React,{useState, useEffect} from 'react';
-import {ImagePopUp} from "./ImagePopUp";
 export const PhotoGallery = ({data}) => {
+  const [url, setUrl]=useState([])
     // const [data,setData]=useState([])
     // useEffect( () => {
     //     fetch("https://raw.githubusercontent.com/Lokenath/MyRepo/master/Test/package.json")
@@ -11,22 +11,28 @@ export const PhotoGallery = ({data}) => {
     //   alert(e.target.currentSrc);
 
     // }
-    
     function posted(){
       alert("Comment Added");
     }
-    const [addClassValue, addClass] = useState(false);
   return (
     <>
       <div className="photo-lists">
                 {data.map( el =>(
                     <div key={el.id} className="photo-list">
                       <div className="photo-list-inner">
-                          <img src={el.url} alt="" onClick={() => addClass(!addClassValue)}/>
-                          {addClassValue && 
-                            <div className="popUp" onClick={() => addClass(!addClassValue)}>
-                              <img src={el.url} alt=""/>
-                            </div>}
+                          <img src={el.url} alt="" onClick={() => setUrl(el.url)}/>                              {/* (<div className="popUp"  >
+                               <img src={url} alt=""/>
+                             </div>) */}
+                             <div>
+                                {
+                                    url.length===0? <div>
+                                  </div> : <div className="popUp"  onClick={() => setUrl([])}>
+                                    <img src={url} alt=""/>
+                                  </div>
+                                }
+                               
+                            </div>
+                          
                           <ul className="list-unstyled likes">
                             <li>{el.likes} Like</li>
                             <li>{el.category}</li>

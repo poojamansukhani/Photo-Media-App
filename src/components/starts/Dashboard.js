@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import {PhotoGallery} from "../photo/PhotoGallery";
 import {PhotoTopAction} from "../photo-top-action/PhotoTopAction";
-import _ from 'underscore';
+import _, { iteratee } from 'underscore';
 export class Dashboard extends Component {
   constructor(props){
     super(props);
@@ -16,7 +16,7 @@ export class Dashboard extends Component {
     var value = e.target.value;
     if(this.state.data.length){
       const filteredData = this.state.data.filter((item)=> {
-        return (item.category).toLowerCase() === value.toLowerCase()
+        return (item.category).toLowerCase().startsWith(value.toLowerCase());
       });
       this.setState({
         tempData:filteredData,
@@ -26,7 +26,7 @@ export class Dashboard extends Component {
   }
   
   handleLiked = () =>{
-    if(this.state.toggle==true){
+    if(this.state.toggle===true){
       const tempData = _.sortBy( this.state.data, 'likes' );
       this.setState({
         tempData:tempData.reverse()
@@ -40,18 +40,19 @@ export class Dashboard extends Component {
     this.setState({toggle:!this.state.toggle})
   }
   handleComment = () => {
-    if(this.state.toggle === true){
-      const tempComment = _.sortBy(this.state.data, 'comments');
-      this.setState({
-        tempComment:tempComment.reverse()
-      })
-    }
-    else{
-      this.setState({
-        tempComment:[]
-      })
-    }
-    this.setState({toggle:!this.state.toggle})
+    // if(!this.state.toggle){
+    //   const tempComment = _.sortBy(this.state.data, iteratee, 'comments');
+    //   this.setState({
+    //     tempComment:tempComment
+    //   })
+    // }
+    // else{
+    //   this.setState({
+    //     tempComment:[]
+    //   })
+    // }
+    // this.setState({toggle:!this.state.toggle})
+
   }
    componentDidMount(){
         fetch("https://raw.githubusercontent.com/Lokenath/MyRepo/master/Test/package.json")

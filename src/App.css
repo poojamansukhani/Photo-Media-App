@@ -136,9 +136,12 @@ body {position: relative;font-weight: 300;margin: 0;font-style: normal;font-stre
 @media (max-width:767px){
   .photo-list-inner > img{height: 160px;}
   .top-actions {display: block;text-align: center;padding:10px 15px}
-  .action-list{align-items: center;justify-content: center;margin-bottom: 10px;}
+  .action-list{align-items: center;justify-content: center;margin:0 0 10px 0;}
+  .action-list li {padding: 0 10px;}
   .action-list input{width:100%}
+  .popUp img {width: 300px;}
+  h1{font-size: 28px;line-height: 34px;}
 }
 @media (max-width:400px){
-  .photo-list{width:100%}
+  .photo-list{width:100%;padding: 0 15px;}
 }

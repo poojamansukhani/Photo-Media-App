@@ -73,9 +73,8 @@ ul, ol {
 
 a {
   color: rgb(102, 102, 180);
-  text-decoration: none;
   cursor: pointer;
-  cursor: pointer;
+  text-decoration: underline;
 }
 
 a:hover, a:focus {
@@ -104,47 +103,32 @@ html[xmlns] .clearfix {
 
 /******* ~~ Body CSS ~~ *******/
 
-body {
-  position: relative;
-  font-weight: 300;
-  margin: 0;
-  font-style: normal;
-  font-stretch: normal;
-  line-height: 1.94;
-  background: #fff;
-  color: #747e88;
-  font-family: Roboto;
-  font-weight: 400;
-  overflow: hidden;
-  overflow-y: auto;
-  width: 100%; padding: 0 15px;
-}
-.container {
-  margin: 0 auto;
-  max-width: 1170px;
-  border:1px solid #6666b4;
-}
-.text-center {
-  text-align: center;
-}
-.top-actions{display: flex;padding:10px 0;align-items: center;}
+body {position: relative;font-weight: 300;margin: 0;font-style: normal;font-stretch: normal;line-height: 1.94;background: #fff;color: #747e88;font-family: Roboto;font-weight: 400;overflow: hidden;overflow-y: auto;width: 100%; padding: 0 15px;}
+.container {margin: 0 auto;max-width: 1170px;border:1px solid #6666b4;}
+.text-center {text-align: center;}
+.top-actions{display: flex;padding:10px 0;align-items: center;border-bottom: 1px solid #6666b4;margin-bottom: 10px;}
 .action-list{display: flex;margin:0 15px}
 .action-list li{padding:0 15px;position: relative;}
 .action-list li:first-child:after{content: "|";position: absolute;right: 0;}
 .photo-lists{display:flex;margin:0 -15px;flex-wrap: wrap;padding:0 30px}
 .photo-list{width:33.33%;padding:0 15px;margin-bottom: 20px;}
 .photo-list-inner{border:1px solid #6666b4;height:100%;}
-.photo-list-inner > img{width:100%; height: 250px;object-fit: cover;cursor: pointer;}
+.photo-list-inner > img{width:100%; height: 220px;object-fit: cover;cursor: pointer;}
 .likes{padding:5px 15px 0;display: flex;font-size: 14px;justify-content: space-between;}
 .likes li:last-child{align-items: flex-end;}
-
-.comment input{height: 25px;width: 100%;margin:0;padding:0 60px 0 15px;border:1px solid #6666b4}
+.comment input{height: 27px;width: 100%;margin:0;padding:0 60px 0 15px;border:1px solid #6666b4;border-width:1px 0;}
 .comment{position: relative;}
-.comment button{position: absolute;right: 0;background: rgb(171, 171, 254);color: rgb(2, 2, 118);border:none;width:50px;height: 25px;top:4px;border:1px solid #6666b4}
+.comment button{position: absolute;right: 0;background: rgb(171, 171, 254);color: rgb(2, 2, 118);border:none;width:50px;height: 25px;top:4px;border:1px solid #6666b4;border-width:0 0 0 1px}
 .prev-comments li{color:#000;font-size:14px;padding:5px 15px;background: #cdf2cd;border-bottom:1px solid #6666b4}
 .prev-comments li:last-child{border-bottom: none;}
-
+.popUp{position: fixed;width: 100%;height: 100%;top:0;left:0;background: rgba(0,0,0,0.05);    display: flex;
+  justify-content: center;
+  align-items: center;}
+.popUp img{width: 500px;}
 /**RESPONSIVE**/
+@media (min-width:1199px){
+  .photo-list-inner{width:85%;margin:0 auto}
+}
 @media (max-width:991px){
   .photo-list{width:50%;padding:0 15px}
   

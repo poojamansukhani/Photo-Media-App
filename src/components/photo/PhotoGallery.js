@@ -1,6 +1,7 @@
 import React,{useState, useEffect} from 'react';
+import Comment from './Comment';
 export const PhotoGallery = ({data}) => {
-  const [url, setUrl]=useState([])
+  const [url, setUrl]=useState([]);
     // const [data,setData]=useState([])
     // useEffect( () => {
     //     fetch("https://raw.githubusercontent.com/Lokenath/MyRepo/master/Test/package.json")
@@ -11,9 +12,7 @@ export const PhotoGallery = ({data}) => {
     //   alert(e.target.currentSrc);
 
     // }
-    function posted(){
-      alert("Comment Added");
-    }
+    
   return (
     <>
       <div className="photo-lists">
@@ -37,10 +36,7 @@ export const PhotoGallery = ({data}) => {
                             <li>{el.likes} Like</li>
                             <li>{el.category}</li>
                           </ul>
-                          <div className="comment">
-                            <input type="text" placeholder="Comment here.."/>
-                            <button type="button" onClick={posted}>Post</button>
-                          </div>
+                          <Comment/>
                           <ul className="prev-comments list-unstyled">
                             {el.comments.map(cmt => (
                              <li>{cmt}</li>
